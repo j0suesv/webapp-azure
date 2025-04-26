@@ -11,14 +11,20 @@ const dbConfigMySQL = {
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
   port: process.env.DB_PORT || 3306,
+  ssl: {
+    rejectUnauthorized: true // opción segura
+  }
 };
 
 const dbConfigPostgres = {
   host: process.env.DB_HOST_PG,
   user: process.env.DB_USER_PG,
   password: process.env.DB_PASS_PG,
+  database: process.env.DB_NAME_PG || 'postgres',
   port: process.env.DB_PORT_PG || 5432,
-  database: process.env.DB_NAME_PG || 'postgres'
+  ssl: {
+    rejectUnauthorized: true
+  }
 };
 
 app.get('/', async (req, res) => {
