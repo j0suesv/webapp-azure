@@ -13,8 +13,7 @@ const dbConfigMySQL = {
   port: process.env.DB_PORT || 3306,
   ssl: {
     rejectUnauthorized: true
-  },
-  database: 'mysql' // <<< Usamos la base de datos default de MySQL
+  }
 };
 
 const dbConfigPostgres = {
