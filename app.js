@@ -35,7 +35,7 @@ app.get('/', async (req, res) => {
 
   try {
     const mysqlConnection = await mysql.createConnection(dbConfigMySQL).promise();
-    const [rows] = await mysqlConnection.query('SELECT NOW() AS current_time');
+    const [rows] = await mysqlConnection.query('SELECT CURRENT_TIMESTAMP AS current_time');
     mysqlStatus = 'Conectado exitosamente a MySQL';
     mysqlResult = `Hora actual desde MySQL: ${rows[0].current_time}`;
     await mysqlConnection.end();
