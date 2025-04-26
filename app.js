@@ -14,7 +14,7 @@ const dbConfigMySQL = {
   ssl: {
     rejectUnauthorized: true
   },
-  database: process.env.DB_NAME_MYSQL || 'your_database_mysql'
+  database: 'mysql' // <<< Usamos la base de datos default de MySQL
 };
 
 const dbConfigPostgres = {
@@ -22,7 +22,7 @@ const dbConfigPostgres = {
   user: process.env.DB_USER_PG,
   password: process.env.DB_PASS_PG,
   port: process.env.DB_PORT_PG || 5432,
-  database: process.env.DB_NAME_PG || 'postgres',
+  database: 'postgres', // <<< Usamos la base de datos default de PostgreSQL
   ssl: {
     rejectUnauthorized: true
   }
